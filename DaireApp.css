@@ -341,7 +341,7 @@
 /* Transcription view styling */
 .daire-map-assistant-container .transcription-view {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   gap: 10px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -354,7 +354,7 @@
   border: 1px solid rgba(48, 54, 61, 0.2);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   position: relative;
-  max-height: calc(100vh - 100px);
+  max-height: calc(100vh - 180px);
   width: 100%;
   scroll-behavior: smooth;
 }

@@ -326,10 +326,11 @@
 /* Transcription container overlay */
 .daire-map-assistant-container .transcription-container {
   position: fixed;
-  bottom: 20px;
+  bottom: 100px;
   left: 20px;
-  width: 400px;
-  max-width: calc(100vw - 40px);
+  width: calc(33vw - 40px);
+  max-width: 500px;
+  min-width: 320px;
   pointer-events: none;
   z-index: 900;
   display: flex;
@@ -353,8 +354,34 @@
   border: 1px solid rgba(48, 54, 61, 0.3);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
   position: relative;
-  max-height: 280px;
+  max-height: calc(100vh - 200px);
   width: 100%;
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styling */
+.daire-map-assistant-container .transcription-view::-webkit-scrollbar {
+  width: 6px;
+}
+
+.daire-map-assistant-container .transcription-view::-webkit-scrollbar-track {
+  background: rgba(48, 54, 61, 0.2);
+  border-radius: 3px;
+}
+
+.daire-map-assistant-container .transcription-view::-webkit-scrollbar-thumb {
+  background: rgba(83, 155, 245, 0.5);
+  border-radius: 3px;
+}
+
+.daire-map-assistant-container .transcription-view::-webkit-scrollbar-thumb:hover {
+  background: rgba(83, 155, 245, 0.7);
+}
+
+/* Firefox scrollbar */
+.daire-map-assistant-container .transcription-view {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(83, 155, 245, 0.5) rgba(48, 54, 61, 0.2);
 }
 
 .daire-map-assistant-container .transcription-close-button {
@@ -861,9 +888,14 @@
 
   .daire-map-assistant-container .transcription-container {
     left: 10px;
-    bottom: 10px;
+    bottom: 80px;
     width: calc(100vw - 20px);
     max-width: calc(100vw - 20px);
+    min-width: 280px;
+  }
+
+  .daire-map-assistant-container .transcription-view {
+    max-height: calc(100vh - 180px);
   }
 
   .daire-map-assistant-container .console-panel {

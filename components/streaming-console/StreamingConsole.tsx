@@ -65,6 +65,7 @@ export default function StreamingConsole() {
   );
   const scrollRef = useRef<HTMLDivElement>(null);
   const isMobile = useMediaQuery('(max-width: 768px)');
+  const [isTranscriptionVisible, setIsTranscriptionVisible] = useState(true);
 
   const displayedTurns = showSystemMessages
     ? turns
@@ -276,12 +277,25 @@ export default function StreamingConsole() {
     }
   }, [turns, isAwaitingFunctionResponse]);
 
+  useEffect(() => {
+    if (displayedTurns.length > 0 || isAwaitingFunctionResponse) {
+      setIsTranscriptionVisible(true);
+    }
+  }, [displayedTurns.length, isAwaitingFunctionResponse]);
+
   return (
     <div className="transcription-container">
       {displayedTurns.length === 0 && !isAwaitingFunctionResponse ? (
         <div></div>
-      ) : (
+      ) : isTranscriptionVisible ? (
         <div className="transcription-view" ref={scrollRef}>
+          <button
+            className="transcription-close-button"
+            onClick={() => setIsTranscriptionVisible(false)}
+            aria-label="Close transcription"
+          >
+            <span className="icon">close</span>
+          </button>
           {displayedTurns.map((t) => {
             if (t.role === 'system') {
               return (
@@ -389,7 +403,7 @@ export default function StreamingConsole() {
             </div>
           )}
         </div>
-      )}
+      ) : null}
     </div>
   );
 }

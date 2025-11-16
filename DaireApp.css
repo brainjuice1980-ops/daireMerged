@@ -1,0 +1,79 @@
+/* DaireApp.css - Scoped ONLY to Map Assistant */
+
+.daire-map-assistant-container {
+  width: 100%;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #0D1117;
+  color: #E6EDF3;
+  overflow: hidden;
+}
+
+.daire-map-assistant-container * {
+  box-sizing: border-box;
+}
+
+.daire-map-assistant-container .App {
+  width: 100%;
+  height: 100%;
+}
+
+.daire-map-assistant-container .streaming-console {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #0D1117;
+}
+
+.daire-map-assistant-container .console-panel {
+  background-color: #161B22;
+  display: flex;
+  flex-direction: column;
+}
+
+.daire-map-assistant-container .map-panel {
+  flex: 1;
+  position: relative;
+  background-color: #0D1117;
+}
+
+.daire-map-assistant-container .material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+}
+
+.daire-map-assistant-container ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.daire-map-assistant-container ::-webkit-scrollbar-track {
+  background: #161B22;
+}
+
+.daire-map-assistant-container ::-webkit-scrollbar-thumb {
+  background: #30363D;
+  border-radius: 4px;
+}
+
+.daire-map-assistant-container ::-webkit-scrollbar-thumb:hover {
+  background: #484F58;
+}
+
+.daire-map-assistant-container button:focus-visible,
+.daire-map-assistant-container input:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+}
+
+.daire-map-assistant-container gmp-map-3d,
+.daire-map-assistant-container canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

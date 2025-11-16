@@ -343,17 +343,12 @@
 .daire-map-assistant-container .transcription-view {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 18px;
+  padding: 0;
   pointer-events: auto;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  background: transparent;
   position: absolute;
   top: 0;
   left: 0;
@@ -431,7 +426,7 @@
 .daire-map-assistant-container .transcription-entry {
   display: flex;
   gap: 12px;
-  max-width: 600px;
+  width: 100%;
   animation: slideIn 0.3s ease-in;
 }
 
@@ -446,9 +441,14 @@
   }
 }
 
+.daire-map-assistant-container .transcription-entry.agent {
+  flex-direction: row;
+  align-items: flex-start;
+}
+
 .daire-map-assistant-container .transcription-entry.user {
-  margin-left: auto;
-  flex-direction: row-reverse;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
 .daire-map-assistant-container .transcription-entry.user {
@@ -467,8 +467,8 @@
 }
 
 .daire-map-assistant-container .avatar {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -476,9 +476,8 @@
   flex-shrink: 0;
   font-weight: 600;
   font-size: 14px;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  background: white;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 }
 
 .daire-map-assistant-container .avatar .icon {
@@ -486,45 +485,43 @@
 }
 
 .daire-map-assistant-container .transcription-entry.agent .avatar {
-  background: rgba(9, 105, 218, 0.95);
-  color: white;
-  border: 1px solid rgba(83, 155, 245, 0.3);
+  background: white;
+  color: #4A90E2;
+  border: none;
 }
 
 .daire-map-assistant-container .transcription-entry.user .avatar {
-  background: rgba(26, 127, 55, 0.95);
-  color: white;
-  border: 1px solid rgba(45, 164, 78, 0.3);
+  background: white;
+  color: #4A90E2;
+  border: none;
 }
 
 .daire-map-assistant-container .message-bubble {
-  padding: 12px 16px;
-  border-radius: 16px;
+  padding: 16px 20px;
+  border-radius: 20px;
   position: relative;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(48, 54, 61, 0.3);
+  font-size: 16px;
+  line-height: 1.6;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  border: none;
+  flex: 1;
+  max-width: 100%;
 }
 
 .daire-map-assistant-container .transcription-entry.agent .message-bubble {
-  background-color: rgba(40, 40, 40, 0.85);
-  color: #FFFFFF;
+  background-color: rgba(220, 220, 220, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #1a1a1a;
   border-bottom-left-radius: 4px;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-  font-size: 15px;
-  line-height: 1.5;
 }
 
 .daire-map-assistant-container .transcription-entry.user .message-bubble {
-  background-color: rgba(9, 105, 218, 0.85);
-  color: white;
-  border-bottom-right-radius: 4px;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-  font-size: 15px;
-  line-height: 1.5;
+  background-color: rgba(220, 220, 220, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #1a1a1a;
+  border-bottom-left-radius: 4px;
 }
 
 .daire-map-assistant-container .sidebar {

@@ -328,10 +328,9 @@
   position: fixed;
   top: 20px;
   left: 20px;
-  bottom: 120px;
-  width: calc(33.33vw - 40px);
-  max-width: 500px;
-  min-width: 320px;
+  bottom: 200px;
+  width: 480px;
+  max-width: calc(100vw - 40px);
   pointer-events: none;
   z-index: 900;
   display: flex;

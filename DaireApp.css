@@ -7,6 +7,8 @@
   background-color: #0D1117;
   color: #E6EDF3;
   overflow: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .daire-map-assistant-container * {
@@ -16,6 +18,8 @@
 .daire-map-assistant-container .App {
   width: 100%;
   height: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .daire-map-assistant-container .streaming-console {
@@ -24,6 +28,8 @@
   width: 100vw;
   display: flex;
   background-color: #0D1117;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .daire-map-assistant-container .console-panel {
@@ -31,14 +37,15 @@
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 24px;
+  bottom: 20px;
   z-index: 1000;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   background: transparent;
   color: #E6EDF3;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
+  gap: 16px;
 }
 
 .daire-map-assistant-container .console-panel > * {
@@ -48,12 +55,21 @@
 
 .daire-map-assistant-container .map-panel {
   position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  left: 0 !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
   z-index: 1;
   background: white;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.daire-map-assistant-container .map-panel > * {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .daire-map-assistant-container .control-tray {
@@ -301,17 +317,15 @@
 
 /* Transcription container overlay */
 .daire-map-assistant-container .transcription-container {
-  position: fixed;
-  top: 80px;
-  left: 24px;
-  bottom: 140px;
+  position: relative;
   width: 500px;
   max-width: calc(100vw - 48px);
   pointer-events: none;
   z-index: 500;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 /* Transcription view styling */
@@ -330,7 +344,8 @@
   border: 1px solid rgba(48, 54, 61, 0.6);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
   position: relative;
-  max-height: calc(100vh - 240px);
+  max-height: 400px;
+  width: 100%;
 }
 
 .daire-map-assistant-container .transcription-close-button {
@@ -836,10 +851,8 @@
   }
 
   .daire-map-assistant-container .transcription-container {
-    top: 60px;
-    left: 10px;
     width: calc(100vw - 20px);
-    bottom: 160px;
+    max-width: calc(100vw - 20px);
   }
 
   .daire-map-assistant-container .console-panel {

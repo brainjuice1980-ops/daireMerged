@@ -161,11 +161,12 @@ function ControlTray({trayRef}: ControlTrayProps) {
           ref={connectButtonRef}
           className={cn('action-button connect-toggle', { connected })}
           onClick={connected ? disconnect : connect}
-          title={connectButtonTitle}
+          aria-label={connectButtonTitle}
         >
           <span className="material-symbols-outlined filled">
             {connected ? 'pause' : 'play_arrow'}
           </span>
+          <span className="button-tooltip">{connectButtonTitle}</span>
         </button>
         <button
           type="button"
@@ -177,11 +178,11 @@ function ControlTray({trayRef}: ControlTrayProps) {
             'speaker-off': speakerMuted,
           })}
           onClick={() => setSpeakerMuted(!speakerMuted)}
-          title={!speakerMuted ? 'Mute audio output' : 'Unmute audio output'}
         >
           <span className="material-symbols-outlined">
             {!speakerMuted ? 'volume_up' : 'volume_off'}
           </span>
+          <span className="button-tooltip">{!speakerMuted ? 'Mute audio output' : 'Unmute audio output'}</span>
         </button>
         <button
           className={cn('action-button mic-button', {
@@ -189,22 +190,24 @@ function ControlTray({trayRef}: ControlTrayProps) {
             'mic-off': muted,
           })}
           onClick={handleMicClick}
-          title={micButtonTitle}
+          aria-label={micButtonTitle}
         >
           {!muted ? (
             <span className="material-symbols-outlined filled">mic</span>
           ) : (
             <span className="material-symbols-outlined filled">mic_off</span>
           )}
+          <span className="button-tooltip">{micButtonTitle}</span>
         </button>
         <button
           className={cn('action-button keyboard-toggle-button')}
           onClick={() => setIsTextEntryVisible(!isTextEntryVisible)}
-          title="Toggle text input"
+          aria-label="Toggle text input"
         >
           <span className="icon">
             {isTextEntryVisible ? 'keyboard_hide' : 'keyboard'}
           </span>
+          <span className="button-tooltip">Toggle text input</span>
         </button>
         {(!isMobile || isTextEntryVisible) && (
           <form className="prompt-form" onSubmit={handleTextSubmit}>
@@ -232,10 +235,10 @@ function ControlTray({trayRef}: ControlTrayProps) {
         <button
           className={cn('action-button')}
           onClick={handleSettingsClick}
-          title="Settings"
           aria-label="Settings"
         >
           <span className="icon">tune</span>
+          <span className="button-tooltip">Settings</span>
         </button>
       </nav>
     </section>

@@ -202,7 +202,7 @@ function AppComponent() {
   );
 }
 
-function App() {
+function DaireApp() {
   return (
     <div className="App">
       <APIProvider
@@ -215,4 +215,4 @@ function App() {
   );
 }
 
-export default App;
+export default DaireApp;

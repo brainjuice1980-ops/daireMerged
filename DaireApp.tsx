@@ -23,7 +23,7 @@ import ControlTray from './components/ControlTray';
 import ErrorScreen from './components/ErrorScreen';
 import StreamingConsole from './components/streaming-console/StreamingConsole';
 import PopUp from './components/popup/PopUp';
-import Sidebar from './components/Sidebar';
+import Sidebar from './components/DaireSettingsSidebar';
 import { LiveAPIProvider } from './contexts/LiveAPIContext';
 import { APIProvider, useMapsLibrary } from '@vis.gl/react-google-maps';
 import { Map3D, Map3DCameraProps} from './components/map-3d';

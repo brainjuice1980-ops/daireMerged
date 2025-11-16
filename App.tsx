@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { User, UserRole } from './types';
 import Header from './components/Header';
-import Sidebar from './components/Sidebar';
+import Sidebar from './components/DaireSettingsSidebar';
 import Dashboard from './components/Dashboard';
 import ContentStudio from './components/ContentStudio';
 import MarketIntelligence from './components/MarketIntelligence';

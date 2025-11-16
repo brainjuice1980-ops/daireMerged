@@ -58,6 +58,8 @@ export enum PostStatus {
   Published = 'Published',
 }
 
+
+
 export interface ContentPost {
   id: string;
   projectId: string;
@@ -143,10 +145,11 @@ export enum PropertyType {
   
 
 export enum ClientView {
-    AI = 'Ask AI Assistant',
-    Listings = 'My Listings',
-    Mortgage = 'Mortgage Calculator',
-    Vault = 'My Vault',
+  AI = 'ai',
+  MapAssistant = 'map-assistant', // NEW
+  Listings = 'listings',
+  Mortgage = 'mortgage',
+  Vault = 'vault',
 }
   
 export interface VaultDocument {

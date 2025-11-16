@@ -5,6 +5,7 @@ import ClientSidebar from './ClientSidebar';
 import MortgageCalculator from './MortgageCalculator';
 import MyVault from './MyVault';
 import ClientAIView from './ClientAIView';
+import DaireAssistant from '../DaireAssistant';
 
 const ClientDashboard: React.FC<{ currentUser: User }> = ({ currentUser }) => {
     const [currentView, setCurrentView] = useState<ClientView>(ClientView.AI);
@@ -15,6 +16,8 @@ const ClientDashboard: React.FC<{ currentUser: User }> = ({ currentUser }) => {
                 return <MyListings currentUser={currentUser} />;
             case ClientView.AI:
                 return <ClientAIView currentUser={currentUser} />;
+            case ClientView.MapAssistant:
+                return <DaireAssistant />;
             case ClientView.Mortgage:
                 return <MortgageCalculator />;
             case ClientView.Vault:

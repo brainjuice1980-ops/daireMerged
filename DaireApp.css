@@ -1109,3 +1109,13 @@
   font-size: 0.85em;
   color: #E6EDF3;
 }
+
+/* Fix transcription message box display */
+.daire-map-assistant-container .transcription-view {
+  max-height: calc(100vh - 140px) !important;
+  min-height: 200px !important;
+  height: auto !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  white-space: normal !important;
+}

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@google/genai": "^1.28.0",
+    "@headlessui/react": "^2.2.9",
     "@supabase/supabase-js": "^2.39.0",
     "@vis.gl/react-google-maps": "^1.7.1",
     "classnames": "^2.5.1",
@@ -17,6 +18,8 @@
     "lodash": "^4.17.21",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
     "zustand": "^5.0.8"
   },
   "devDependencies": {

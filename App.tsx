@@ -15,7 +15,7 @@ import UnifiedLogin from './components/UnifiedLogin';
 import ChangePassword from './components/ChangePassword';
 import ForgotPassword from './components/ForgotPassword';
 import StaffRegister from './components/StaffRegister';
-
+import DaireAssistant from './DaireAssistant'; // NEW IMPORT
 
 const App: React.FC = () => {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
@@ -149,6 +149,8 @@ const App: React.FC = () => {
     switch (currentView) {
       case 'dashboard':
         return <Dashboard currentUser={currentUser} />;
+      case 'daire-assistant':  // NEW CASE
+        return <DaireAssistant />;
       case 'content-studio':
         return <ContentStudio currentUser={currentUser} />;
       case 'market-intelligence':
@@ -157,13 +159,11 @@ const App: React.FC = () => {
         return <Clients currentUser={currentUser} />;
       case 'contracts':
         if (currentUser.role !== UserRole.Owner && currentUser.role !== UserRole.Admin) {
-          // Redirect non-privileged users to the dashboard
           return <Dashboard currentUser={currentUser} />;
         }
         return <Contracts currentUser={currentUser} />;
       case 'master-prompts':
         if (currentUser.role !== UserRole.Owner && currentUser.role !== UserRole.Admin) {
-          // Redirect non-privileged users to the dashboard
           return <Dashboard currentUser={currentUser} />;
         }
         return <MasterPrompts />;
@@ -252,7 +252,7 @@ const App: React.FC = () => {
       <Header currentUser={currentUser} setCurrentUser={handleSetCurrentUser} onLogout={handleLogout} />
       <div className="flex flex-1 overflow-hidden">
         <Sidebar currentView={currentView} setCurrentView={setCurrentView} currentUser={currentUser} />
-        <main className="flex-1 p-6 overflow-y-auto">
+        <main className="flex-1 overflow-hidden"> {/* REMOVED p-6 and overflow-y-auto for full-screen map */}
           {renderCurrentView()}
         </main>
       </div>

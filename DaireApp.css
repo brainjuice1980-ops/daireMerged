@@ -38,8 +38,7 @@
 .daire-map-assistant-container .console-panel {
   width: auto;
   position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 30px;
   top: 20px;
   z-index: 1000;
   display: flex;

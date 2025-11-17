@@ -325,38 +325,33 @@
 /* Transcription container overlay */
 .daire-map-assistant-container .transcription-container {
   position: fixed;
-  top: 130px;
   left: 30px;
-  bottom: 30px;
+  bottom: 100px;
   width: 50vw;
   max-width: 800px;
   min-width: 500px;
   pointer-events: none;
   z-index: 900;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: stretch;
+  max-height: calc(100vh - 200px);
 }
 
 /* Transcription view styling */
 .daire-map-assistant-container .transcription-view {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  flex-direction: column-reverse;
+  gap: 12px;
   overflow-y: auto !important;
   overflow-x: hidden !important;
-  padding: 20px;
+  padding: 20px 20px 0px 20px;
   pointer-events: auto;
   background: transparent;
-  position: fixed !important;
-  top: 130px !important;
-  left: 30px !important;
-  width: 50% !important;
-  max-width: 900px !important;
-  min-width: 600px !important;
+  position: relative;
+  width: 100%;
   height: auto !important;
-  max-height: calc(100vh - 170px) !important;
-  min-height: 200px !important;
+  max-height: calc(100vh - 200px) !important;
   scroll-behavior: smooth;
   word-wrap: break-word !important;
   overflow-wrap: break-word !important;
@@ -431,19 +426,19 @@
 
 .daire-map-assistant-container .transcription-entry {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   width: 100%;
-  animation: slideIn 0.3s ease-in;
+  animation: slideUp 0.3s ease-out;
 }
 
-@keyframes slideIn {
+@keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateX(-20px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 
@@ -473,17 +468,17 @@
 }
 
 .daire-map-assistant-container .avatar {
-  width: 48px;
-  height: 48px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
   font-weight: 600;
-  font-size: 14px;
-  background: white;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .daire-map-assistant-container .avatar .icon {
@@ -503,34 +498,34 @@
 }
 
 .daire-map-assistant-container .message-bubble {
-  padding: 16px 20px;
-  border-radius: 20px;
+  padding: 12px 16px;
+  border-radius: 16px;
   position: relative;
-  font-size: 15px;
-  line-height: 1.6;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  line-height: 1.5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   border: none;
   flex: 1;
-  max-width: 100%;
+  max-width: 90%;
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: normal;
 }
 
 .daire-map-assistant-container .transcription-entry.agent .message-bubble {
-  background-color: rgba(240, 240, 240, 0.75);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: #1a1a1a;
   border-bottom-left-radius: 4px;
 }
 
 .daire-map-assistant-container .transcription-entry.user .message-bubble {
-  background-color: rgba(240, 240, 240, 0.75);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #1a1a1a;
-  border-bottom-left-radius: 4px;
+  background-color: rgba(100, 181, 246, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  border-bottom-right-radius: 4px;
 }
 
 .daire-map-assistant-container .sidebar {
@@ -1118,12 +1113,3 @@
   color: #E6EDF3;
 }
 
-/* Fix transcription message box display */
-.daire-map-assistant-container .transcription-view {
-    position: fixed !important;
-  max-height: calc(100vh - 140p
-                     left: 20px !important;x) !important;
-  top: 20px !important;  height: auto !important;
-  width: 50% !important;  overflow-wrap: break-word !important;
-  white-space: normal !important;
-}
